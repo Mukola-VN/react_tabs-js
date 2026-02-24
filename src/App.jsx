@@ -9,8 +9,7 @@ export const tabs = [
   { id: 'tab-3', title: 'Tab 3', content: 'Some text 3' },
 ];
 
-// Змінюємо назву пропса при деструктуризації на items (або іншу), 
-// щоб не "затінювати" глобальний масив tabs
+
 export const Tabs = ({ tabs: items, activeTabId, onTabSelected }) => {
   const activeTab = items.find(tab => tab.id === activeTabId) || items[0];
 
@@ -58,7 +57,7 @@ export const App = () => {
       <h1 className="title">Selected tab is {currentTab.title}</h1>
 
       <Tabs
-        tabs={tabs} // Передаємо наш масив tabs
+        tabs={tabs} 
         activeTabId={activeTabId}
         onTabSelected={setActiveTabId}
       />
